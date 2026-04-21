@@ -11,6 +11,21 @@
       "url": "https://github.com/bauratynov"
     }
   },
+  "projects": [
+    {
+      "guid": "rcc-compiler",
+      "name": "rcc",
+      "description": "C11 compiler in Rust with SSA IR, 3 backends, LSP server, and 11 optimizations.",
+      "webpageUrl": {
+        "url": "https://github.com/bauratynov/rcc"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/bauratynov/rcc"
+      },
+      "licenses": ["MIT", "Apache-2.0"],
+      "tags": ["compiler", "c", "rust", "wasm", "lsp", "ssa"]
+    }
+  ],
   "funding": {
     "channels": [
       {
