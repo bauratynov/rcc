@@ -12,16 +12,11 @@
     {
       "guid": "rcc-compiler",
       "name": "rcc",
-      "description": "A C11 compiler written in Rust with SSA IR, 3 backends (x86-64, WAT, WASM binary), LSP server, linter, and 11 optimizations — in 8.7K lines with zero dependencies. Compiles 100% of chibicc tests.",
-      "webpageUrl": {
-        "url": "https://github.com/bauratynov/rcc"
-      },
-      "repositoryUrl": {
-        "url": "https://github.com/bauratynov/rcc",
-        "wellKnown": "https://github.com/bauratynov/rcc/blob/main/funding.json"
-      },
+      "description": "A C11 compiler written in Rust with SSA IR, 3 backends, LSP server, and 11 optimizations in 8.7K lines of Rust with zero dependencies",
+      "webpageUrl": "https://github.com/bauratynov/rcc",
+      "repositoryUrl": "https://github.com/bauratynov/rcc",
       "licenses": ["MIT", "Apache-2.0"],
-      "tags": ["compiler", "c", "rust", "wasm", "lsp", "ssa", "webassembly", "optimization"]
+      "tags": ["compiler", "c", "rust", "wasm", "lsp", "ssa"]
     }
   ],
   "funding": {
@@ -38,27 +33,10 @@
         "guid": "maintenance",
         "status": "active",
         "name": "Ongoing maintenance and development",
-        "description": "Continued development of rcc: improving C11 coverage, adding optimizations, fixing codegen correctness, expanding test suite, maintaining LSP and WASM backends",
+        "description": "Continued development of rcc compiler",
         "amount": 50000,
         "currency": "USD",
         "frequency": "one-time"
-      },
-      {
-        "guid": "monthly-sustain",
-        "status": "active",
-        "name": "Monthly sustainer",
-        "description": "Monthly support for continuous maintenance, bug fixes, and feature development",
-        "amount": 2000,
-        "currency": "USD",
-        "frequency": "monthly"
-      }
-    ],
-    "history": [
-      {
-        "guid": "v1-release",
-        "year": 2026,
-        "month": 4,
-        "description": "v1.0.0 release: 41/41 chibicc tests, SSA IR, 3 backends, LSP, 11 optimizations"
       }
     ]
   }
