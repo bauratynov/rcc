@@ -5,7 +5,10 @@
     "role": "maintainer",
     "name": "bauratynov",
     "email": "bauratynov@gmail.com",
-    "description": "Systems programmer building compilers, video surveillance, and AI inference engines"
+    "description": "Systems programmer building compilers, video surveillance, and AI inference engines",
+    "webpageUrl": {
+      "url": "https://github.com/bauratynov"
+    }
   },
   "projects": [
     {
