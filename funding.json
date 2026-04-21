@@ -23,7 +23,7 @@
         "url": "https://github.com/bauratynov/rcc"
       },
       "licenses": ["MIT", "Apache-2.0"],
-      "tags": ["compiler", "c", "rust", "wasm", "lsp", "ssa"]
+      "tags": ["compiler", "c-lang", "rust", "wasm", "lsp", "ssa"]
     }
   ],
   "funding": {
