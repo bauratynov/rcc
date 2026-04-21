@@ -1,0 +1,15 @@
+{
+    "// HOW TO USE": "Add this to your VS Code settings.json to use rcc as a C language server",
+    "// STEP 1": "Build rcc: cargo build --release",
+    "// STEP 2": "Install the 'Generic LSP Client' extension in VS Code",
+    "// STEP 3": "Add the following to your VS Code settings.json:",
+
+    "genericLSP.servers": [
+        {
+            "name": "rcc",
+            "command": "E:/rcc/target/release/rcc.exe",
+            "args": ["--lsp"],
+            "languages": ["c"]
+        }
+    ]
+}

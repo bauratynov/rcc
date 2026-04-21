@@ -1,0 +1,12 @@
+[package]
+name = "rcc"
+version = "1.0.0"
+edition = "2024"
+description = "A small C11 compiler with SSA IR, WASM backend, LSP server, and 11 optimizations — in 8.7K lines of Rust with zero dependencies"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/bauratynov/rcc"
+keywords = ["compiler", "c", "wasm", "lsp", "ssa"]
+categories = ["compilers", "development-tools"]
+readme = "README.md"
+
+[dependencies]

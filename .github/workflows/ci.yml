@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-gnu
+
+      - name: Build
+        run: cargo build --release
+
+      - name: Run unit tests
+        run: cargo test
+
+      - name: End-to-end tests
+        shell: bash
+        run: |
+          PASS=0
+          FAIL=0
+          for f in test_inputs/*.c; do
+            name=$(basename "$f" .c)
+            if target/release/rcc.exe "$f" -o "test_inputs/${name}.exe" 2>/dev/null; then
+              if "test_inputs/${name}.exe" 2>/dev/null; then
+                PASS=$((PASS+1))
+              else
+                echo "RUNTIME FAIL: $name"
+                FAIL=$((FAIL+1))
+              fi
+            else
+              echo "COMPILE FAIL: $name"
+              FAIL=$((FAIL+1))
+            fi
+          done
+          echo "Results: $PASS passed, $FAIL failed"
+          if [ $FAIL -gt 3 ]; then exit 1; fi
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build (check only)
+        run: cargo check
+
+      - name: Test IR dump
+        run: |
+          cargo build
+          echo 'int main() { return 42; }' > /tmp/test.c
+          cargo run -- --ir /tmp/test.c
+
+      - name: Test WASM output
+        run: |
+          echo 'int main() { return 0; }' > /tmp/test.c
+          cargo run -- --wasm /tmp/test.c

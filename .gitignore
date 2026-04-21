@@ -1,0 +1,21 @@
+/target/
+*.exe
+*.o
+*.obj
+*.s
+*.pdb
+*.d
+*.wasm
+*.wat
+Cargo.lock
+
+# Test artifacts
+test_inputs/*.exe
+test_inputs/*.s
+test_chibicc/*.exe
+test_chibicc_orig/*.exe
+test_chibicc_orig/*.s
+test_real/**/*.exe
+test_real/**/*.s
+test_real/**/*.o
+test_real/cJSON/cJSON_*.h
