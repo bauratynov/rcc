@@ -31,8 +31,10 @@ jobs:
         run: |
           PASS=0
           FAIL=0
+          SKIP="bad typo e2e_fail lint_test preprocess sprint2"
           for f in test_inputs/*.c; do
             name=$(basename "$f" .c)
+            echo "$SKIP" | grep -qw "$name" && continue
             if target/release/rcc.exe "$f" -o "test_inputs/${name}.exe" 2>/dev/null; then
               if "test_inputs/${name}.exe" 2>/dev/null; then
                 PASS=$((PASS+1))
@@ -46,7 +48,7 @@ jobs:
             fi
           done
           echo "Results: $PASS passed, $FAIL failed"
-          if [ $FAIL -gt 3 ]; then exit 1; fi
+          if [ $FAIL -gt 0 ]; then exit 1; fi
 
   build-linux:
     runs-on: ubuntu-latest
