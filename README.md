@@ -1,6 +1,8 @@
-# rcc
+<p align="center">
+  <img src="logo.jpg" alt="rcc logo" width="400">
+</p>
 
-**A C11 compiler written in Rust with SSA IR, 3 backends, LSP server, and 11 optimizations.**
+<h3 align="center">A C11 compiler written in Rust with SSA IR, 3 backends, LSP server, and 11 optimizations.</h3>
 
 [![CI](https://github.com/bauratynov/rcc/actions/workflows/ci.yml/badge.svg)](https://github.com/bauratynov/rcc/actions)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)](LICENSE-MIT)
@@ -48,34 +50,9 @@ error: unknown identifier 'retrun'
 
 ## Architecture
 
-```
-                              rcc compilation pipeline
-  
-  source.c ──> [ Preprocessor ] ──> [ Lexer ] ──> [ Parser ] ──> AST
-                 #define              tokens        recursive      |
-                 #include                           descent        v
-                 #ifdef                                      [ Optimizer ]
-                 __VA_OPT__                                  const fold
-                 #stringify                                  dead code
-                                                             strength red.
-                                                                  |
-                              +-----------+-----------+           v
-                              |           |           |      [ SSA mem2reg ]
-                              v           v           v      phi promotion
-                         [ codegen ]  [ lower ]  [ lower ]        |
-                          (legacy)      |           |             v
-                              |         v           v        [ IR Opts ]
-                              |    [ x64 backend]  [ WASM ]  const fold
-                              |         |        /     \     dead inst
-                              v         v       v       v    branch simp
-                            .s file   .s file  .wat   .wasm
-                              |         |
-                              v         v
-                           [ gcc/cc ] assemble + link
-                              |
-                              v
-                          executable
-```
+<p align="center">
+  <img src="scheme.jpg" alt="rcc compilation pipeline" width="900">
+</p>
 
 ## Quick Start
 
