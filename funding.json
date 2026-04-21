@@ -1,0 +1,64 @@
+{
+  "version": "v1.1.0",
+  "entity": {
+    "type": "individual",
+    "role": "maintainer",
+    "name": "bauratynov",
+    "email": "bauratynov@gmail.com",
+    "description": "Systems programmer building compilers, video surveillance, and AI inference engines"
+  },
+  "projects": [
+    {
+      "guid": "github.com/bauratynov/rcc",
+      "name": "rcc",
+      "description": "A C11 compiler written in Rust with SSA IR, 3 backends (x86-64, WAT, WASM binary), LSP server, linter, and 11 optimizations — in 8.7K lines with zero dependencies. Compiles 100% of chibicc tests.",
+      "webpageUrl": {
+        "url": "https://github.com/bauratynov/rcc"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/bauratynov/rcc",
+        "wellKnown": "https://github.com/bauratynov/rcc/blob/main/funding.json"
+      },
+      "licenses": ["MIT", "Apache-2.0"],
+      "tags": ["compiler", "c", "rust", "wasm", "lsp", "ssa", "webassembly", "optimization"]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "github-sponsors",
+        "type": "payment-provider",
+        "address": "https://github.com/sponsors/bauratynov",
+        "description": "GitHub Sponsors"
+      }
+    ],
+    "plans": [
+      {
+        "guid": "maintenance",
+        "status": "active",
+        "name": "Ongoing maintenance and development",
+        "description": "Continued development of rcc: improving C11 coverage, adding optimizations, fixing codegen correctness, expanding test suite, maintaining LSP and WASM backends",
+        "amount": 50000,
+        "currency": "USD",
+        "frequency": "one-time"
+      },
+      {
+        "guid": "monthly-sustain",
+        "status": "active",
+        "name": "Monthly sustainer",
+        "description": "Monthly support for continuous maintenance, bug fixes, and feature development",
+        "amount": 2000,
+        "currency": "USD",
+        "frequency": "monthly"
+      }
+    ],
+    "history": [
+      {
+        "guid": "v1-release",
+        "year": 2026,
+        "month": 4,
+        "description": "v1.0.0 release: 41/41 chibicc tests, SSA IR, 3 backends, LSP, 11 optimizations"
+      }
+    ]
+  }
+}
