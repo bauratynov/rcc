@@ -1,42 +1,33 @@
 {
+  "$schema": "https://fundingjson.org/schema/v1.1.0.json",
   "version": "v1.1.0",
   "entity": {
     "type": "individual",
     "role": "maintainer",
     "name": "bauratynov",
     "email": "bauratynov@gmail.com",
-    "description": "Systems programmer building compilers, video surveillance, and AI inference engines",
-    "webpageUrl": "https://github.com/bauratynov"
-  },
-  "projects": [
-    {
-      "guid": "rcc-compiler",
-      "name": "rcc",
-      "description": "A C11 compiler written in Rust with SSA IR, 3 backends, LSP server, and 11 optimizations in 8.7K lines of Rust with zero dependencies",
-      "webpageUrl": "https://github.com/bauratynov/rcc",
-      "repositoryUrl": "https://github.com/bauratynov/rcc",
-      "licenses": ["MIT", "Apache-2.0"],
-      "tags": ["compiler", "c", "rust", "wasm", "lsp", "ssa"]
+    "description": "Systems programmer building compilers, video surveillance, and AI inference engines.",
+    "webpageUrl": {
+      "url": "https://github.com/bauratynov"
     }
-  ],
+  },
   "funding": {
     "channels": [
       {
         "guid": "github-sponsors",
         "type": "payment-provider",
-        "address": "https://github.com/sponsors/bauratynov",
-        "description": "GitHub Sponsors"
+        "address": "https://github.com/sponsors/bauratynov"
       }
     ],
     "plans": [
       {
-        "guid": "maintenance",
+        "guid": "monthly-support",
         "status": "active",
-        "name": "Ongoing maintenance and development",
-        "description": "Continued development of rcc compiler",
-        "amount": 50000,
+        "name": "Monthly development support",
+        "amount": 0,
         "currency": "USD",
-        "frequency": "one-time"
+        "frequency": "monthly",
+        "channels": ["github-sponsors"]
       }
     ]
   }
