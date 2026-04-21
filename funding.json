@@ -12,7 +12,7 @@
   },
   "projects": [
     {
-      "guid": "github.com/bauratynov/rcc",
+      "guid": "rcc-compiler",
       "name": "rcc",
       "description": "A C11 compiler written in Rust with SSA IR, 3 backends (x86-64, WAT, WASM binary), LSP server, linter, and 11 optimizations — in 8.7K lines with zero dependencies. Compiles 100% of chibicc tests.",
       "webpageUrl": {
