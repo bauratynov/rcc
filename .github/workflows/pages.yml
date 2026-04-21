@@ -1,0 +1,32 @@
+name: Deploy funding.json to Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Create pages directory
+        run: |
+          mkdir -p _site
+          cp funding.json _site/
+          cp index.html _site/ 2>/dev/null || echo '<html><head><meta http-equiv="refresh" content="0;url=https://github.com/bauratynov/rcc"></head></html>' > _site/index.html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
